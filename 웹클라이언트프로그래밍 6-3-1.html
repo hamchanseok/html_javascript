@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function BMI(name,height,weight){
+        this.userName = name;
+        this.userHeight = height;
+        this.userWeight = weight;
+        this.Bmi;
+        }
+        BMI.prototype.obesity = function(){
+        this.Bmi = this.userWeight / ((this.userHeight/100) * (this.userHeight/100));
+       
+        if(this.Bmi < 18.5) {
+            return "저체중";
+        } else if(this.Bmi < 25){
+            return "정상체중";
+        } else if(this.Bmi < 30){
+            return "과체중";
+        } else {
+            return "비만";
+        }
+    }
+
+        var jang = new BMI("장보리",168,62)
+        document.write(jang.userName+"님은"+jang.obesity()+"입니다.<br>");
+
+        var park = new BMI("박달재",180,90)
+        document.write(park.userName+"님은"+park.obesity()+"입니다.<br>");
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
